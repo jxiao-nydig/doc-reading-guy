@@ -2,7 +2,7 @@
 
 > Your docs just found their new BFF! A slick chat interface that lets you talk to your documents like they're old pals.
 
-![The Doc Guy Screenshot](https://via.placeholder.com/800x400?text=The+Doc+Guy+Screenshot)
+![The Doc Guy Screenshot](./assets/doc-guy.png)
 
 ## 🚀 What's This Magic?
 
