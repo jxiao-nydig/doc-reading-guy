@@ -1,13 +1,9 @@
 {
     "version": 2,
-    "buildCommand": "next build",
-    "outputDirectory": ".next",
-    "installCommand": "npm install",
     "builds": [
       { 
         "src": "package.json", 
-        "use": "@vercel/next",
-        "config": { "outputDirectory": ".next" } 
+        "use": "@vercel/next"
       },
       { 
         "src": "api/app.py",
@@ -16,6 +12,10 @@
           "maxLambdaSize": "15mb",
           "runtime": "python3.9"
         }
+      },
+      {
+        "src": "public/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
@@ -30,9 +30,13 @@
       {
         "handle": "filesystem"
       },
+      {
+        "src": "/",
+        "dest": "/public/index.html"
+      },
       { 
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/$1"
       }
     ]
   }
