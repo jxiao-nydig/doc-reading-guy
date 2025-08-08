@@ -462,6 +462,11 @@ async def debug_extraction(file: UploadFile = File(...)):
 async def health_check():
     return {"status": "ok"}
 
+@app.get("/")
+async def root():
+    """Root endpoint for the API"""
+    return {"message": "Welcome to the Doc Guy API. Use /api endpoints to interact with the service."}
+
 # Entry point for running the application directly
 if __name__ == "__main__":
     import uvicorn
